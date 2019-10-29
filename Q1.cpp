@@ -103,8 +103,36 @@ int main ()
 	case 'r':
 	  //I THINK I FINALLY FIGURED OUT HOW TO USE FILE I/O??
 	  //JUST PRETEND WHATEVER I GOT UP THERE IS COPIED FOR THESE FUNCTIONS
+	  double rinput;
+	  if (readingRainbow.is_open() && !readingRainbow.eof())
+	    readingRainbow >> rinput;
+	  else
+	    {
+	      cout << "Please enter command parameters:";
+	      cin >> rinput;
+	    }
+	  if(writingRainbow.is_open())
+	    {
+	      writingRainbow << rinput << endl;
+	      writingRainbow << "findSqrtValue(" << rinput << ") = " << findSqrtValue(rinput)<< endl;
+	    }
+	  cout << "findSqrtValue(" << rinput << ") = " << findSqrtValue(rinput)<< endl;
 	  break;
 	case 'l':
+	  double linput;
+	  if (readingRainbow.is_open() && !readingRainbow.eof())
+	    readingRainbow >> linput;
+	  else
+	    {
+	      cout << "Please enter command parameters:";
+	      cin >> linput;
+	    }
+	  if(writingRainbow.is_open())
+	    {
+	      writingRainbow << linput << endl;
+	      writingRainbow << "naturalLog(" << linput << ") = " << naturalLog(linput)<< endl;
+	    }
+	  cout << "naturalLog(" << linput << ") = " << naturalLog(linput)<< endl;
 	  break;
 	case 'c':
 	  break;
